@@ -1,0 +1,8 @@
+<%%= turbo_frame_tag dom_id(@<%= singular_name %>) do %>
+<div class="card">
+  <div class="card-body">
+    <h3><%%= t('titles.new', model: '<%= human_name.downcase %>') %></h3> <br>
+      <%%= render "form", <%= singular_parent_table_name %>:@<%= singular_name %>.<%= singular_parent_table_name %>, <%= singular_table_name %>: @<%= singular_name %> %>
+  </div>
+</div>
+<%% end %>

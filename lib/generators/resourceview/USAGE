@@ -1,0 +1,8 @@
+Description:
+    Cria as views referentes ao resource que será uma coleção de um model parent
+
+Example:
+    bin/rails generate resourceview Resource field1:type ... fieldn:type --parent=ParentModel
+
+    This will create:
+        what/will/it/create

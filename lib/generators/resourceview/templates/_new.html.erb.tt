@@ -1,0 +1,6 @@
+<div class="card">
+  <div class="card-body">
+    <h3><%%= t('titles.new', model: '<%= human_name.downcase %>') %></h3> <br>
+      <%%= render "<%= plural_table_name %>/form", <%= singular_parent_table_name %>:<%= singular_parent_table_name %>, <%= singular_table_name %>: <%= model_name %>.new %>
+  </div>
+</div>

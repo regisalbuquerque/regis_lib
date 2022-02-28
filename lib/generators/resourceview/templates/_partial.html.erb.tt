@@ -1,0 +1,28 @@
+<%%= turbo_frame_tag dom_id(<%= singular_name %>) do %>
+  <%%= content_tag :div, id: dom_id(<%= singular_name %>) do %>
+
+    <div class="row" style="background-color: '#dcdcdc;'">
+
+      <% attributes.reject(&:password_digest?).each do |attribute| %>
+        <div class="col">
+	  <%%= <%= singular_name %>.<%= attribute.column_name %> %>
+	</div>
+      <% end %>
+      
+      <div class="col">
+        <%%= link_to t('buttons.edit'), edit_<%= singular_name %>_path(<%= singular_name %>) %> |
+        <%%= link_to t('buttons.delete'), <%= singular_name %>, 
+          data: {
+            "turbo-method": :delete, 
+            controller: "confirmation",
+            "confirmation-message-value": t('messages.confirm_delete', item: <%= singular_name %>.id),
+            action: "confirmation#confirm"
+          } 
+        %>
+      </div>
+
+    </div> <!-- DIV ROW -->
+
+  <%% end %> <!-- CONTENT_TAG DIV -->
+<%% end %> <!-- TURBO_FRAME_TAG -->
+

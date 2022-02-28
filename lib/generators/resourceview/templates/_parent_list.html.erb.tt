@@ -1,0 +1,11 @@
+<h2><%= model_name_pluralize %></h2>
+
+<div id="<%= model_name_pluralize %>">
+  <div class="container">
+    <%%= render "<%= plural_table_name %>/<%= singular_table_name %>_header" %> 
+    <%%= render <%= singular_parent_table_name %>.<%= plural_table_name %> %>
+  </div>
+</div>
+
+<br />
+<%%= render "<%= plural_table_name %>/new", <%= singular_parent_table_name %>:<%= singular_parent_table_name %> %>
