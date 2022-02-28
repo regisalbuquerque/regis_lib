@@ -1,8 +1,8 @@
 Description:
-    Explain the generator
+    Copy the customized scaffold templates to lib path 
 
 Example:
-    bin/rails generate scaffold_templates Thing
+    bin/rails generate scaffold_templates
 
     This will create:
         what/will/it/create

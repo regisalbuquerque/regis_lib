@@ -9,7 +9,7 @@ class ScaffoldTemplatesGenerator < Rails::Generators::Base
     copy_file "partial.html.erb.tt", "lib/templates/erb/scaffold/partial.html.erb.tt"
     copy_file "show.html.erb.tt", "lib/templates/erb/scaffold/show.html.erb.tt"
     
-    copy_file "controller.rb.tt", "lib/templates/rails/controller.rb.tt"
-    copy_file "api_controller.rb.tt", "lib/templates/rails/api_controller.rb.tt"
+    copy_file "controller.rb.tt", "lib/templates/rails/scaffold_controller/controller.rb.tt"
+    copy_file "api_controller.rb.tt", "lib/templates/rails/scaffold_controller/api_controller.rb.tt"
   end
 end
