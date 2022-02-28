@@ -1,0 +1,10 @@
+<p style="color: green"><%%= notice %></p>
+
+<h1><%%= t('titles.showing', model: '<%= human_name.pluralize %>') %></h1>   
+
+<%%= render @<%= singular_table_name %> %>
+
+<div>
+  <%%= link_to t('buttons.edit'), <%= edit_helper(type: :path) %> %> |
+  <%%= link_to t('buttons.back_lista'), <%= index_helper(type: :path) %> %>
+</div>

@@ -1,0 +1,39 @@
+<p style="color: green"><%%= notice %></p>
+
+<h1><%%= t('titles.index', model: '<%= human_name.pluralize %>') %></h1>
+
+<%%= link_to t('buttons.new'), <%= new_helper(type: :path) %> %>
+
+<div id="<%= plural_table_name %>">
+
+   <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">-</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+	  <%% @<%= plural_table_name %>.each do |registro| %>
+             <%%= content_tag :tr, id: dom_id(registro) do %>
+                <th scope="row"><%%= registro.id %></th>
+                <td><%%= registro.id %></td>
+                <td>
+                    <%%= link_to t('buttons.show'), registro %> | 
+                    <%%= link_to t('buttons.edit'), <%= edit_helper('registro', type: :path) %> %> |
+                    <%%= link_to t('buttons.delete'), registro, 
+                       data: {
+                          "turbo-method": :delete,
+                          controller: "confirmation",
+                          "confirmation-message-value": t('messages.confirm_delete', item: registro.id),
+                          action: "confirmation#confirm"
+                       } 
+                    %>
+                </td>
+             <%% end %>
+          <%% end %>
+       </tbody>
+    </table>
+</div>
+

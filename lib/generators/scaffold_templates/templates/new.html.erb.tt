@@ -1,0 +1,9 @@
+<h1><%%= t('titles.new', model: '<%= human_name.downcase %>') %></h1> 
+
+<%%= render "form", <%= singular_table_name %>: @<%= singular_table_name %> %>
+
+<br>
+
+<div>
+  <%%= link_to t('buttons.back_lista'), <%= index_helper(type: :path) %> %>
+</div>
