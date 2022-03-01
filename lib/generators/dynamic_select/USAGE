@@ -1,8 +1,8 @@
 Description:
-    Explain the generator
+    Dynamic Select Generator
 
 Example:
-    bin/rails generate dynamic_select Thing
+    bin/rails generate dynamic_select Model select1 select2
 
     This will create:
         what/will/it/create
