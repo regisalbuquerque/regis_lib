@@ -1,10 +1,14 @@
 <div data-controller="select" data-select-url-value="<%%= <%= url %> %>" data-select-param-value="<%= select1 %>">
-  <div>
-    <%%= form.label :<%= select1 %>_id, style: "display: block" %>
-    <%%= form.collection_select :<%= select1 %>_id, <%= select1_model %>.all, :id, :nome, {include_blank: 'Nenhum', selected: form.object.<%= select1 %>_id}, {data:{action: "change->select#change"}} %>
+  <div class="row">
+    <div class="col form-group">
+      <%%= form.label :<%= select1 %>_id, style: "display: block" %>
+      <%%= form.collection_select :<%= select1 %>_id, <%= select1_model %>.all, :id, :nome, {include_blank: 'Nenhum', selected: form.object.<%= select1 %>_id}, {class:"form-control", data:{action: "change->select#change"}} %>
+    </div>
   </div>
-  <div>
-    <%%= form.label :<%= select2 %>_id, style: "display: block" %>
-    <%%= form.collection_select :<%= select2 %>_id, (form.object.<%= select1 %>_id? ? <%= select2_model%>._search_<%= select1 %>_id_(form.object.<%= select1 %>_id) : []), :id, :nome, {include_blank: 'Nenhum', selected: form.object.<%= select2 %>_id}, { data: { select_target: "select"} } %>
+  <div class="row">
+    <div class="col form-group">
+      <%%= form.label :<%= select2 %>_id, style: "display: block" %>
+      <%%= form.collection_select :<%= select2 %>_id, (form.object.<%= select1 %>_id? ? <%= select2_model%>._search_<%= select1 %>_id_(form.object.<%= select1 %>_id) : []), :id, :nome, {include_blank: 'Nenhum', selected: form.object.<%= select2 %>_id}, {class:"form-control", data: { select_target: "select"} } %>
+    </div>
   </div>
 </div>
