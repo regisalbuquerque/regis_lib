@@ -37,7 +37,7 @@ class DynamicSelectGenerator < Rails::Generators::NamedBase
     template "_form_select_fields.html.erb.tt", "app/views/#{file_name.pluralize}/" + form_select_file + ".html.erb"
     
     render_str = "<%= render \"#{form_select_file}\", form:form %>"
-    inject_into_file("app/views/#{file_name.pluralize}/_form.html.erb", "\n" + render_str + "\n", :after => "<div class=\"row\">" )
+    inject_into_file("app/views/#{file_name.pluralize}/_form.html.erb", "\n" + render_str + "\n", :after => "<div class=\"card-body\">" )
 
   end
 
