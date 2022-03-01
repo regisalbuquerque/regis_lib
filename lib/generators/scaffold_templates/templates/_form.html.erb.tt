@@ -20,8 +20,8 @@
       <%= human_name  %>
    </div>
    <div class="card-body">
-      <div class="row">
 <% attributes.each do |attribute| -%>
+      <div class="row">
         <div class="col form-group">
 <% if attribute.password_digest? -%>
 <%%= form.label :password, style: "display: block" %>
@@ -36,7 +36,9 @@
            <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, class:"form-control" %>
 <% end -%>
         </div>
+      </div> <!-- ROW -->
 <% end -%>
+      <div class="row">
         <div class="col">
           <%%= form.submit t('buttons.save') %>
         </div>
