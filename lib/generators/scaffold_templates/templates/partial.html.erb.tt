@@ -9,25 +9,23 @@
     </thead>
     <tbody>
 
-	<% attributes.reject(&:password_digest?).each do |attribute| -%>
-           <tr>	
-             <th scope="row"><%= attribute.human_name %></th> 
-             <td>	
-		     <% if attribute.attachment? -%>
-			<%%= link_to <%= singular_name %>.<%= attribute.column_name %>.filename, <%= singular_name %>.<%= attribute.column_name %> if <%= singular_name %>.<%= attribute.column_name %>.attached? %>
-		     <% elsif attribute.attachments? -%>
-			<%% <%= singular_name %>.<%= attribute.column_name %>.each do |<%= attribute.singular_name %>| %>
-			   <div><%%= link_to <%= attribute.singular_name %>.filename, <%= attribute.singular_name %> %></div>
-			<%% end %>
-		     <% else -%>
-			<%%= <%= singular_name %>.<%= attribute.column_name %> %>
-		     <% end -%>
-             </td>
-	   </tr>
-
-	<% end -%> <!-- ATRIBUTES -->
-
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+      <tr>
+        <th scope="row"><%= attribute.human_name %></th>
+        <td>
+<% if attribute.attachment? -%>
+<%%= link_to <%= singular_name %>.<%= attribute.column_name %>.filename, <%= singular_name %>.<%= attribute.column_name %> if <%= singular_name %>.<%= attribute.column_name %>.attached? %>
+<% elsif attribute.attachments? -%>
+<%% <%= singular_name %>.<%= attribute.column_name %>.each do |<%= attribute.singular_name %>| %>
+<div><%%= link_to <%= attribute.singular_name %>.filename, <%= attribute.singular_name %> %></div>
+<%% end %>
+<% else -%>
+            <%%= <%= singular_name %>.<%= attribute.column_name %> %>
+<% end -%>
+        </td>
+      </tr>
+<% end -%> <!-- ATRIBUTES -->
     </tbody>
-  </table>
-  <%% end %> <!-- CONTENT_TAG DIV -->
+</table>
+<%% end %> <!-- CONTENT_TAG DIV -->
 
