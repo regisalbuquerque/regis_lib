@@ -9,7 +9,7 @@ module RegisLib
     end
 
     def moeda(numero)
-      'R$ ' + number_to_currency(numero, unit: "", separator: ",", delimiter: ".", format: "%n %u")
+      numero.present? ? 'R$ ' + number_to_currency(numero, unit: "", separator: ",", delimiter: ".", format: "%n %u") : ""
     end
     
     def presente(valor, var)
