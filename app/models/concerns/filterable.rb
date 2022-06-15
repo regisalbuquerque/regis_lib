@@ -10,4 +10,6 @@ module Filterable
       results
     end
   end
+
+  ActiveSupport.run_load_hooks(:filterable, self)
 end
