@@ -11,5 +11,4 @@ module Filterable
     end
   end
 
-  ActiveSupport.run_load_hooks(:filterable, self)
 end
