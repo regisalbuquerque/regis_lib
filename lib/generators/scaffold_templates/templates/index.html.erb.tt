@@ -1,8 +1,10 @@
-<p style="color: green"><%%= notice %></p>
 
-<h1><%%= t('titles.index', model: '<%= human_name.pluralize %>') %></h1>
-
-<%%= link_to t('buttons.new'), <%= new_helper(type: :path) %> %>
+<%% content_for :head_tittle do %>
+  <%%= t('titles.showing', model: '<%= human_name.pluralize %>') %>
+<%% end %>
+<%% content_for :head_menu do %>
+  <li class="nav-item"><%%= link_to t('buttons.new'), <%= new_helper(type: :path) %>, class: "nav-link" %></li>
+<%% end %>
 
 <div id="<%= plural_table_name %>">
 
